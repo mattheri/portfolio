@@ -19,6 +19,8 @@ export const Portfolio = () => {
     const handleNext = () => setTransform(prev => Object.assign({}, prev, { curr: transform.curr === 0 ? 1 : transform.curr++, dir: true }));
     const handlePrev = () => setTransform(prev => Object.assign({}, prev, { curr: transform.curr--, dir: false }));
 
+    React.useEffect(() => console.log(transform), [transform]);
+
     return (
         <section className="portfolio-section">
             <button disabled={transform.curr === projects.length - 1} className="next carousel-control" onClick={handleNext}>&gt;</button>

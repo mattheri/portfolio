@@ -1,0 +1,123 @@
+.nav {
+    &-desktop {
+        position: fixed;
+        @include size(100%);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: no-wrap;
+        max-width: 15%;
+
+        
+        .logo {
+            @include size(100%, fit-content);
+
+            a {
+                text-decoration: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                color: black;
+                text-decoration: none;
+            }
+            
+            .container {
+                position: relative;
+                @include size(fit-content);
+                margin-top: $topHeight;
+                margin-left: auto;
+                margin-right: auto;
+
+                    .dot {
+                        @include size(15px);
+                        border-radius: 50%;
+                        background-color: $blue;
+                        position: absolute;
+                        bottom: 15px;
+                        transition: transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+            }
+        }
+        
+        .list {
+            @include flex($evenly, $center, $col);
+            @include size(100%, 80%);
+            list-style: none;
+
+            .item {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    @include size(100%, 5px);
+                    background-color: $blue;
+                    border-radius: 15px;
+                    bottom: 0;
+                    left: 0;
+                    transform: scaleX(0);
+                    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+                    transform-origin: left;
+                }
+
+                &:hover {
+                    &::after {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+
+            .link {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-mobile {
+        @include size(3rem);
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10;
+
+        .menu-button-container {
+            @include size(100%);
+            position: relative;
+            .menu-button {
+                @include size(fit-content);
+                position: absolute;
+                left: 5%;
+                top: 25%;
+                transform: rotate(180deg) translateY(50%);
+            }
+        }
+
+        .list {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: white;
+            z-index: -1;
+            transform: translateX(100%);
+            transition: transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .link {
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+        &.open {
+            .list {
+                transform: translateX(0);
+            }
+        }
+
+    }
+}

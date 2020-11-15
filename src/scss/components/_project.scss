@@ -1,0 +1,49 @@
+.project {
+    position: absolute;
+    @include size(100%);
+    @include flex($center);
+    padding: 1rem 5rem;
+
+    .project-image {
+        @include size(100%, 50%);
+        background-color: gray;
+        z-index: 1;
+    }
+
+    .project-description-container {
+        width: 100vw;
+        height: 30vh;
+        background-color: $blue;
+        position: absolute;
+        bottom: 0;
+    }
+
+    @include mq($md) {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        @include size(100%);
+
+        .project-image {
+            @include size(100%);
+            grid-column: 2 / 4;
+            grid-row: 2 / 10;
+        }
+
+        .project-description-container {
+            width: 100%;
+            position: relative;
+            grid-column: 3 / 6;
+            grid-row: 7 / 11;
+            @include flex($center, $center, $col);
+            position: relative;
+
+            .project-title {
+                position: absolute;
+                top: -3rem;
+                right: 0;
+                font-size: 2rem;
+            }
+        }
+    }
+}

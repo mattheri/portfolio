@@ -1,0 +1,48 @@
+.portfolio-section {
+    @include size(100%);
+    position: relative;
+    overflow: hidden;
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        background-color: transparent;
+        border: none;
+        padding: 0 1rem;
+        font-size: 5rem;
+        transform: translateY(-50%);
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        cursor: pointer;
+
+        &.next {
+            right: 0;
+
+            &:active {
+                transform: translateY(-50%) translateX(15px);
+            }
+        }
+
+        &.prev {
+
+            &:active {
+                transform: translateY(-50%) translateX(-15px);
+            }
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+    }
+    .carousel-container {
+        @include size(100%);
+
+
+        .carousel-track {
+            @include size(100%);
+            position: relative;
+            transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+    }
+}

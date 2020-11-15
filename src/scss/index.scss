@@ -1,0 +1,11 @@
+@import './utils/reset';
+@import './utils/mixins';
+@import './utils/variables';
+@import './utils/typography';
+
+@import './components/main';
+@import './components/home';
+@import './components/nav';
+@import './components/about';
+@import './components/portfolio';
+@import './components/project';

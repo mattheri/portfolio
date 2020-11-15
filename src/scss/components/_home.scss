@@ -1,0 +1,99 @@
+.home-section {
+    @include size(100%);
+
+    .hero {
+        @include size(100%, 60%);
+        background-color: #a7cfe852;
+        position: relative;
+        background-image: url("../assets/images/laptop_bg.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        @include flex($center);
+
+        .hero-img {
+            position: absolute;
+            @include size(100%, 50%);
+            bottom: 0;
+        }
+
+        .hero-title {
+            @include size(100%, 50%);
+            padding: 0 15px;
+
+            .title {
+                display: flex;
+
+                &:nth-child(1) {
+                    justify-content: flex-start;
+                }
+
+                &:nth-child(2) {
+                    justify-content: center;
+                }
+
+                &:nth-child(3) {
+                    justify-content: flex-end;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+    }
+    .cta {
+        padding: 15px;
+    }
+}
+
+@include mq($md) {
+    .home-section {
+        @include size(100%, calc(100% - 10%));
+
+        .top {
+            @include size(100%, $topHeight);
+        }
+
+        .hero {
+            @include size(100%, 60%);
+            display: flex;
+            justify-content: flex-start;
+
+            .hero-img {
+                position: absolute;
+                @include size(50%, 100%);
+                top: 0;
+                right: 0;
+            }
+
+            .hero-title {
+                @include size(30%);
+                margin-left: 20%;
+
+                .title {
+                    h1 {
+                        font-size: 3rem;
+                        position: relative;
+
+                        .dot {
+                            @include size(15px);
+                            border-radius: 50%;
+                            background-color: $blue;
+                            position: absolute;
+                            bottom: 20px;
+                            right: -20px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .cta {
+            padding: 3rem 0;
+            padding-right: 15px;
+        }
+    }
+}

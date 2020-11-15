@@ -1,0 +1,32 @@
+$center: center;
+$between: space-between;
+$evenly: space-evenly;
+$around: space-around;
+$end: flex-end;
+$start: flex-start;
+$row: row;
+$col: column;
+
+@mixin flex($justify: $center, $align: $center, $dir: $row) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $dir;    
+}
+
+$sm: 577px;
+$md: 769px;
+$lg: 993px;
+$xl: 1201px;
+
+@mixin mq($query) {
+    @media only screen and (min-width: $query) {
+        @content;
+    }
+}
+
+@mixin size($w, $h: $w) {
+    width: $w;
+    height: $h;
+}

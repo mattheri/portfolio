@@ -1,0 +1,60 @@
+.about-section {
+    @include size(100%);
+    .background {
+        @include size(100%);
+        background-color: $blue;
+        position: relative;
+        @include flex($center, $center, $col);
+        
+        @include mq($sm) {
+            @include size(70%, 100%);
+        }
+
+        .container {
+            @include size(60%, 100%);
+            min-width: 375px;
+            min-height: 615px;
+            align-self: flex-end;
+            z-index: 1;
+            padding: 1rem;
+            
+            @include mq($sm) {
+                @include size(60%, 70%);
+            }
+
+            .title {
+                font-size: 4rem;
+                font-weight: 600;
+            }
+
+            .description {
+                padding-top: 3rem;
+                line-height: 200%;
+                
+                @include mq($sm) {
+                    max-width: 60%;
+                }
+            }
+        }
+
+
+        .img {
+            @include size(40%, 70%);
+            min-width: 15rem;
+            min-height: 20rem;
+            position: absolute;
+            background-image: url("../assets/images/profile.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            bottom: -15%;
+            right: 2rem;
+            
+            @include mq($sm) {
+                top: 50%;
+                right: 0;
+                transform: translate(50%, -50%);
+            }
+        }
+    }
+}

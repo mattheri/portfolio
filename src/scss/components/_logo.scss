@@ -1,0 +1,7 @@
+.logo-link {
+    @include size(3rem);
+    margin: 0 0.3rem;
+    img {
+        @include size(3rem);
+    }
+}

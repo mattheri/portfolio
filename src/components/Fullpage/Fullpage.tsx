@@ -1,6 +1,5 @@
 import React from 'react';
 import fullpage, { options } from "fullpage.js";
-import { IntersectionObserverOptions, IntersectionObserverCallback, useObserver } from '../Hooks/useObserver';
 
 type Props = {
     children: React.ReactNode,

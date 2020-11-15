@@ -47,7 +47,7 @@ export const Project = ({ projectDetails, index, getWidth }: Props) => {
                         {description}
                     </p>
                     <div className="project-stack">
-                        {Object.entries(stack).map(([key, value]) => React.cloneElement(value))}
+                        {Object.entries(stack).map(([key, value]) => React.cloneElement(value, { key: key }))}
                     </div>
                     <div className="project-links">
                         <a href={links.github} target="_blank">

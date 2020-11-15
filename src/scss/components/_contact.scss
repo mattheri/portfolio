@@ -1,0 +1,15 @@
+.contact-section {
+    @include flex($center, $center, $col);
+    @include size(100%);
+    position: relative;
+
+    .title {
+        position: absolute;
+        top: 5rem;
+        text-align: center;
+
+        h1 {
+            font-size: 4rem;
+        }
+    }
+}

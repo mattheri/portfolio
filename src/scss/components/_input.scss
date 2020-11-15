@@ -1,0 +1,32 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    input, textarea {
+        border: $blue 3px solid;
+        border-radius: 15px;
+        padding: 0.3rem 0.5rem;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    textarea {
+        height: 7rem;
+        max-height: 15rem;
+        max-width: 100%;
+        resize: vertical;
+    }
+
+    small {
+        font-size: 0.8rem;
+        color: red;
+        height: 1rem;
+    }
+}

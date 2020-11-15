@@ -1,0 +1,40 @@
+.email-section {
+    min-width: 375px;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 50%;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .input {
+            min-width: 300px;
+            max-width: 100%;
+        }
+    }
+
+    button {
+        width: 5rem;
+        background-color: $blue;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+        color: black;
+        font-weight: bold;
+        @include flex($center);
+
+        &:disabled {
+            background-color: white;
+            color: gray;
+        }
+
+        &:not(:disabled) {
+            cursor: pointer;
+        }
+
+        &:hover:not(:disabled) {
+            background-color: #75b1d6;
+        }
+    }
+}

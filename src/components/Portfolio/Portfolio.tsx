@@ -16,8 +16,14 @@ export const Portfolio = () => {
     });
 
     const handleGetWidth = (val: number) => setTransform(prev => Object.assign({}, prev, { width: val }));
-    const handleNext = () => setTransform(prev => Object.assign({}, prev, { curr: transform.curr === 0 ? 1 : transform.curr++, dir: true }));
-    const handlePrev = () => setTransform(prev => Object.assign({}, prev, { curr: transform.curr--, dir: false }));
+    const handleNext = () => {
+        if (transform.curr === 0) setTransform(prev => Object.assign({}, prev, { curr: 1, dir: true }));
+        if (transform.curr === 1) setTransform(prev => Object.assign({}, prev, { curr: 2, dir: true }));
+    };
+    const handlePrev = () => {
+        if (transform.curr === 2) setTransform(prev => Object.assign({}, prev, { curr: 1, dir: false }));
+        if (transform.curr === 1) setTransform(prev => Object.assign({}, prev, { curr: 0, dir: false }));
+    };
 
     React.useEffect(() => console.log(transform), [transform]);
 
